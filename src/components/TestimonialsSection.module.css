@@ -1,0 +1,197 @@
+.testimonials {
+  width: 100%;
+  background-color: var(--white);
+  padding: 110px 0;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+
+.label {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.headline {
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--primary);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.subtext {
+  font-size: 1.1rem;
+  color: #666666;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid rgba(27, 60, 107, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: border-color 0.35s ease, border-width 0.35s ease;
+}
+
+.cardActive {
+  border: 2px solid rgba(27, 60, 107, 0.2);
+}
+
+.stars {
+  display: flex;
+  gap: 3px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.quoteMark {
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 0.6;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.quote {
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: #555555;
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.personName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.personTitle {
+  font-size: 0.8rem;
+  color: #888888;
+}
+
+.logo {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+
+/* ===== Actions ===== */
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.dots {
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(27, 60, 107, 0.18);
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.dotActive {
+  width: 28px;
+  border-radius: 999px;
+  background-color: var(--accent);
+}
+
+.cta {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 14px 30px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(27, 60, 107, 0.22);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .testimonials {
+    padding: 80px 0;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,236 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(27, 60, 107, 0.08);
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* Elevated state once the user scrolls past 50px — frosted navy glass */
+.scrolled {
+  background: rgba(27, 60, 107, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(27, 60, 107, 0.25);
+}
+
+/* ===== Row 1: top bar ===== */
+.topBar {
+  background-color: rgba(27, 60, 107, 0.04);
+  border-bottom: 1px solid rgba(27, 60, 107, 0.06);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.scrolled .topBar {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.topBarInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topLink {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-gray);
+  transition: color 0.35s ease, opacity 0.2s ease;
+}
+
+.topLink:hover {
+  opacity: 0.7;
+}
+
+.scrolled .topLink {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===== Row 2: main nav ===== */
+.mainBar {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: filter 0.35s ease;
+}
+
+/* On the navy glass, invert the navy logo to white so it stays visible */
+.scrolled .logo {
+  filter: brightness(0) invert(1);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.navLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  position: relative;
+  transition: color 0.35s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.scrolled .navLink {
+  color: var(--white) !important;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cta {
+  background: linear-gradient(135deg, #f47920, #ff9143);
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 999px;
+  box-shadow: 0 0 24px rgba(244, 121, 32, 0.35);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cta:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 30px rgba(244, 121, 32, 0.5), 0 0 60px rgba(244, 121, 32, 0.25);
+}
+
+/* Hamburger — hidden on desktop */
+.hamburger {
+  display: none;
+  color: var(--primary);
+  transition: color 0.35s ease;
+}
+
+.scrolled .hamburger {
+  color: var(--white);
+}
+
+/* ===== Mobile drawer ===== */
+.drawer {
+  display: none; /* desktop: hidden — only revealed below 900px */
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.drawerInner {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawerLink {
+  font-size: 18px;
+  color: var(--white);
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color 0.2s ease;
+}
+
+.drawerLink:hover {
+  background-color: var(--accent);
+}
+
+.drawerCta {
+  width: 100%;
+  text-align: center;
+  background-color: var(--accent);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 16px 24px;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.drawerCta:hover {
+  background-color: #e06a10;
+}
+
+.drawerConsult {
+  width: 100%;
+  text-align: center;
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 16px 24px 24px;
+}
+
+.drawerConsult:hover {
+  color: var(--accent);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .navLinks {
+    display: none;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .drawer {
+    display: block;
+  }
+
+  .mainBar {
+    padding: 14px 20px;
+  }
+
+  .topBarInner {
+    padding: 6px 20px;
+  }
+}

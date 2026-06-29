@@ -1,0 +1,171 @@
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: var(--primary);
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 4px solid var(--accent);
+  box-shadow: 0 0 20px rgba(244, 121, 32, 0.5);
+  padding-top: 80px;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1.4fr 1fr 1.2fr;
+  gap: 60px;
+  padding-bottom: 56px;
+}
+
+/* ===== Column 1: Brand ===== */
+.footerLogo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  /* Navy logo → white on the dark footer */
+  filter: brightness(0) invert(1);
+  margin-bottom: 16px;
+}
+
+.tagline {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 24px;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.socialIcon:hover {
+  background: var(--accent);
+  border-color: transparent;
+  transform: translateY(-3px);
+}
+
+.founded {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 340px;
+}
+
+/* ===== Headings ===== */
+.heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 22px;
+}
+
+/* ===== Column 2: Information ===== */
+.infoRows {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+.infoText {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== Columns 3 & 4: link lists ===== */
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link {
+  width: fit-content;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.link:hover {
+  color: var(--accent);
+  padding-left: 4px;
+}
+
+/* ===== Bottom bar ===== */
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.copyright,
+.legal {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.legal a {
+  transition: color 0.2s ease;
+}
+
+.legal a:hover {
+  color: var(--accent);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .footer {
+    padding-top: 60px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

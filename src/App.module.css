@@ -1,0 +1,101 @@
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== Custom cursor ===== */
+.cursorGlow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-radius: 50%;
+  background: var(--accent);
+  filter: blur(20px);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+.cursorDot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: var(--primary);
+  pointer-events: none;
+  z-index: 9998;
+}
+
+@media (max-width: 900px) {
+  .cursorGlow,
+  .cursorDot {
+    display: none;
+  }
+}
+
+/* ===== Marquee ticker ===== */
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--white);
+  border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding: 14px 0;
+}
+
+/* Gradient fade on the left and right edges */
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--white), transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--white), transparent);
+}
+
+.marqueeTrack {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+.marqueeItem {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  padding: 0 28px;
+}
+
+.marqueeStar {
+  color: var(--accent);
+}
